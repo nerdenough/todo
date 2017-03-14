@@ -20,6 +20,7 @@ export default {
 
 <style scoped>
 .todo-header {
+  display: flex;
   width: 100%;
   height: 80px;
   background: #8BC34A;

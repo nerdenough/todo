@@ -10,11 +10,11 @@ export default {
 
 <style scoped>
 .text-field {
+  flex-grow: 1;
+  height: 100%;
   background: #AED581;
   color: white;
   font-size: 18px;
-  width: 100%;
-  height: 100%;
   border: none;
   outline: none;
   padding: 0 15px;
