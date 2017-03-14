@@ -1,15 +1,18 @@
 <template>
   <div class="todo-header">
     <text-field />
+    <add-button />
   </div>
 </template>
 
 <script>
+import AddButton from './AddButton';
 import TextField from './TextField';
 
 export default {
   name: 'todo-header',
   components: {
+    AddButton,
     TextField
   }
 };
