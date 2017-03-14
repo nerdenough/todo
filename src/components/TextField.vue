@@ -4,9 +4,7 @@
 
 <script>
 export default {
-  name: 'text-field',
-  components: {
-  }
+  name: 'text-field'
 };
 </script>
 
