@@ -1,10 +1,15 @@
 <template>
-  <button class="add-button">Add</button>
+  <button @click="onClick" class="add-button">Add</button>
 </template>
 
 <script>
 export default {
-  name: 'add-button'
+  name: 'add-button',
+  methods: {
+    onClick: () => {
+      console.log('Add todo!!!!');
+    }
+  }
 };
 </script>
 
