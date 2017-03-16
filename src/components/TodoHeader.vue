@@ -1,19 +1,27 @@
 <template>
   <div class="todo-header">
-    <text-field />
-    <add-button />
+    <input v-model="todo" class="text-field" type="text" placeholder="Add a Todo" />
+    <button @click="addTodo(todos, todo)" class="add-button">Add</button>
   </div>
 </template>
 
 <script>
-import AddButton from './AddButton';
-import TextField from './TextField';
-
 export default {
   name: 'todo-header',
-  components: {
-    AddButton,
-    TextField
+  data: () => {
+    return {
+      todo: ''
+    };
+  },
+  props: {
+    todos: {
+      type: Array,
+      required: true
+    },
+    addTodo: {
+      type: Function,
+      required: true
+    }
   }
 };
 </script>
@@ -26,5 +34,41 @@ export default {
   background: #8BC34A;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.text-field {
+  flex-grow: 1;
+  height: 100%;
+  background: #AED581;
+  color: white;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.text-field::placeholder {
+  color: #DCEDC8;
+}
+
+.add-button {
+  height: 100%;
+  background: white;
+  color: #8BC34A;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 15px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+.add-button:hover {
+  background: #DCEDC8;
 }
 </style>
