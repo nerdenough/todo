@@ -1,7 +1,7 @@
 <template>
   <div class="todo-header">
     <input v-model="todo" class="text-field" type="text" placeholder="Add a Todo" />
-    <button @click="addTodo(todos, todo)" class="add-button">Add</button>
+    <button @click="addTodo(todos, todo)" class="add-button"><i class="fa fa-plus"></i> Todo</button>
   </div>
 </template>
 
