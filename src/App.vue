@@ -23,7 +23,7 @@ export default {
   methods: {
     addTodo: (todos, todo) => {
       if (todo) {
-        todos.push(todo);
+        todos.splice(0, 0, todo);
       }
     },
     removeTodo: (todos, todo) => {
