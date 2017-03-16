@@ -22,7 +22,9 @@ export default {
   },
   methods: {
     addTodo: (todos, todo) => {
-      todos.push(todo);
+      if (todo) {
+        todos.push(todo);
+      }
     },
     removeTodo: (todos, todo) => {
       todos.splice(todos.indexOf(todo), 1);
