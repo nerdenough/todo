@@ -1,22 +1,19 @@
 <template>
   <div class="app">
     <todo-header :todos="todos" :addTodo="addTodo" />
-    <ul>
-      <li v-for="todo in todos">
-        {{ todo }}
-        <button @click="removeTodo(todos, todo)">Delete</button>
-      </li>
-    </ul>
+    <todo-list :todos="todos" :removeTodo="removeTodo" />
   </div>
 </template>
 
 <script>
 import TodoHeader from './components/TodoHeader';
+import TodoList from './components/TodoList';
 
 export default {
   name: 'app',
   components: {
-    TodoHeader
+    TodoHeader,
+    TodoList
   },
   data: () => {
     return {
