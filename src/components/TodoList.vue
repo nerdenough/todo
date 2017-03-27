@@ -1,9 +1,11 @@
 <template>
   <div class="todo-list">
-    <div class="todo-item" v-for="todo in todos">
-      <div class="text">{{ todo }}</div>
-      <button class="delete" @click="removeTodo(todos, todo)"><i class="fa fa-trash"></i></button>
-    </div>
+    <transition-group name="fade">
+      <div class="todo-item" v-for="todo in todos" :key="todo">
+        <div class="text">{{ todo }}</div>
+        <button class="delete" @click="removeTodo(todos, todo)"><i class="fa fa-trash"></i></button>
+      </div>
+    </transition-group>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ export default {
 
 <style scoped>
 .todo-list {
-  width: 100%;
+  max-width: 100%;
   padding-bottom: 10px;
 }
 
@@ -43,9 +45,11 @@ export default {
   border-right: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  overflow: hidden;
 }
 
 .delete {
+  flex-basis: 0;
   background: #E91E63;
   color: white;
   font-size: 18px;
@@ -59,5 +63,12 @@ export default {
 
 .delete:hover {
   background: #F06292;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity ease-in-out .2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
 }
 </style>
